@@ -1,6 +1,6 @@
 "use strict";
 
-
+// convert character digit to its string equivalent
 function convert_digit(digit){
     switch (digit){
         case '0':
@@ -28,16 +28,19 @@ function convert_digit(digit){
     }
 }
 
+// read args from command line
 let arg_num = process.argv.slice(2);
-console.log(arg_num);
+let str = '';
 
+// concatenates digit conversions
 for(let i = 0; i < arg_num.length; i++){
     let num = '';
     for(let digit of arg_num[i]){
         num += convert_digit(digit);
     }
-    arg_num[i] = num;
+    str += num + ',';
 }
 
-console.log(arg_num);
+console.log(str.slice(0,-1))
+
 
